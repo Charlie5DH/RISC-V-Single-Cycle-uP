@@ -1,6 +1,6 @@
 # RISC-V-Single-Cycle-uP
 
-Design and implementation in VHDL for FPGAs of a single cycle RISC-V based architecture.
+Design and implementation in VHDL for FPGAs of a single cycle RISC-V based architecture. This work is the result of Digital Systems and Reconfigurable Logic Devices discipline from UFSC. For more information go to **Documents/Relatorio_Final**
 
 The work presents the design of a single cycle reduced version of the RISC-V architecture described by David A. Patterson and John L. Hennessy in the book, “Computer Organization and Design RISC-V Edition: The Hardware Software Interface”, Morgan Kaufmann, 2017. The design is described in VHDL (Very High-Speed Integrated Circuit Hardware Description Language) to be implemented in an FPGA (Fieldprogrammable gate array) and includes all the necessary hardware to implement some of the most common instructions in the RISC-V architecture. The functioning is tested by making use of three programs in assembly code, stored in the instruction memory, which use all the instructions and the input/output interface of the platform. Testbenches for the functionality of the design are provided.
 
