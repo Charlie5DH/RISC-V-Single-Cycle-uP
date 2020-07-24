@@ -1,0 +1,97 @@
+# do RISC_V_Micro_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4b Lib Mapping Utility 2015.05 May 27 2015
+# vmap -modelsim_quiet work rtl_work 
+# Copying C:/altera/15.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:/altera/15.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {D:/Development/VHDL/RISC_V_Micro/VHDL/rising_edge_detector.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+# Start time: 15:28:11 on Jun 14,2019
+# vcom -reportprogress 300 -93 -work work D:/Development/VHDL/RISC_V_Micro/VHDL/rising_edge_detector.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity rising_edge_detector
+# -- Compiling architecture Behavioral of rising_edge_detector
+# End time: 15:28:11 on Jun 14,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Development/VHDL/RISC_V_Micro/VHDL/Reg_File.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+# Start time: 15:28:11 on Jun 14,2019
+# vcom -reportprogress 300 -93 -work work D:/Development/VHDL/RISC_V_Micro/VHDL/Reg_File.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity Reg_File
+# -- Compiling architecture arch_Reg_File of Reg_File
+# End time: 15:28:11 on Jun 14,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Development/VHDL/RISC_V_Micro/VHDL/PC.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+# Start time: 15:28:12 on Jun 14,2019
+# vcom -reportprogress 300 -93 -work work D:/Development/VHDL/RISC_V_Micro/VHDL/PC.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity PC
+# -- Compiling architecture arch_PC of PC
+# End time: 15:28:12 on Jun 14,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Development/VHDL/RISC_V_Micro/VHDL/OutputLogic.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+# Start time: 15:28:12 on Jun 14,2019
+# vcom -reportprogress 300 -93 -work work D:/Development/VHDL/RISC_V_Micro/VHDL/OutputLogic.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity OutputLogic
+# -- Compiling architecture OutputLogic_arch of OutputLogic
+# End time: 15:28:12 on Jun 14,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Development/VHDL/RISC_V_Micro/VHDL/Mux_ToRegFile.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4b Compiler 2015.05 May 27 2015
+# Start time: 15:28:13 on Jun 14,2019
+# vcom -reportprogress 300 -93 -work work D:/Development/VHDL/RISC_V_Micro/VHDL/Mux_ToRegFile.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Mux_ToRegFile
+# -- Compiling architecture arch_Mux_ToRegFile of Mux_ToRegFile
+# ** Error: D:/Development/VHDL/RISC_V_Micro/VHDL/Mux_ToRegFile.vhd(31): (vcom-1014) Array type case expression must be of a locally static subtype.
+# 
+# ** Warning: D:/Development/VHDL/RISC_V_Micro/VHDL/Mux_ToRegFile.vhd(32): (vcom-1322) Case statement choice (string literal) cannot be checked for uniqueness.
+# 
+# ** Warning: D:/Development/VHDL/RISC_V_Micro/VHDL/Mux_ToRegFile.vhd(33): (vcom-1322) Case statement choice (string literal) cannot be checked for uniqueness.
+# 
+# ** Warning: D:/Development/VHDL/RISC_V_Micro/VHDL/Mux_ToRegFile.vhd(34): (vcom-1322) Case statement choice (string literal) cannot be checked for uniqueness.
+# 
+# ** Warning: D:/Development/VHDL/RISC_V_Micro/VHDL/Mux_ToRegFile.vhd(35): (vcom-1322) Case statement choice (string literal) cannot be checked for uniqueness.
+# 
+# ** Warning: D:/Development/VHDL/RISC_V_Micro/VHDL/Mux_ToRegFile.vhd(36): (vcom-1322) Case statement choice (string literal) cannot be checked for uniqueness.
+# 
+# ** Warning: D:/Development/VHDL/RISC_V_Micro/VHDL/Mux_ToRegFile.vhd(37): (vcom-1322) Case statement choice (string literal) cannot be checked for uniqueness.
+# 
+# ** Warning: D:/Development/VHDL/RISC_V_Micro/VHDL/Mux_ToRegFile.vhd(38): (vcom-1322) Case statement choice (string literal) cannot be checked for uniqueness.
+# 
+# ** Error: D:/Development/VHDL/RISC_V_Micro/VHDL/Mux_ToRegFile.vhd(47): VHDL Compiler exiting
+# End time: 15:28:13 on Jun 14,2019, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 7
+# ** Error: C:/altera/15.1/modelsim_ase/win32aloem/vcom failed.
+# Error in macro ./RISC_V_Micro_run_msim_rtl_vhdl.do line 12
+# C:/altera/15.1/modelsim_ase/win32aloem/vcom failed.
+#     while executing
+# "vcom -93 -work work {D:/Development/VHDL/RISC_V_Micro/VHDL/Mux_ToRegFile.vhd}"

@@ -1,0 +1,12 @@
+PowerPlay Power Analyzer Status : Successful - Fri Jun 14 11:48:31 2019
+Quartus Prime Version : 15.1.0 Build 185 10/21/2015 SJ Lite Edition
+Revision Name : RISC_V_Micro
+Top-level Entity Name : DataPath
+Family : Cyclone V
+Device : 5CSEBA6U23I7
+Power Models : Final
+Total Thermal Power Dissipation : 421.70 mW
+Core Dynamic Thermal Power Dissipation : 0.00 mW
+Core Static Thermal Power Dissipation : 412.20 mW
+I/O Thermal Power Dissipation : 9.50 mW
+Power Estimation Confidence : Low: user provided insufficient toggle rate data

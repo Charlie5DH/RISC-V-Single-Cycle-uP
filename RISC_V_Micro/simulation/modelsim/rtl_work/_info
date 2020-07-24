@@ -1,0 +1,201 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/Development/VHDL/RISC_V_Micro/simulation/modelsim
+Emux_toregfile
+w1560456697
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+8D:/Development/VHDL/RISC_V_Micro/VHDL/Mux_ToRegFile.vhd
+FD:/Development/VHDL/RISC_V_Micro/VHDL/Mux_ToRegFile.vhd
+l0
+L4
+VBeVTAA?ZHN2n6Ke@e38Di0
+!s100 MJL8Gim_fTnQIRhdKnGNz0
+Z3 OV;C;10.4b;61
+31
+!s110 1560536893
+!i10b 1
+!s108 1560536893.000000
+!s90 -reportprogress|300|-93|-work|work|D:/Development/VHDL/RISC_V_Micro/VHDL/Mux_ToRegFile.vhd|
+!s107 D:/Development/VHDL/RISC_V_Micro/VHDL/Mux_ToRegFile.vhd|
+!i113 1
+Z4 o-93 -work work
+Z5 tExplicit 1
+Eoutputlogic
+Z6 w1560435766
+Z7 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z8 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+R1
+R2
+R0
+Z9 8D:/Development/VHDL/RISC_V_Micro/VHDL/OutputLogic.vhd
+Z10 FD:/Development/VHDL/RISC_V_Micro/VHDL/OutputLogic.vhd
+l0
+L6
+VC7_YTm@Tj@bN813bP]75Z2
+!s100 2_0_N]ODWLNG:7;@efR4N0
+R3
+31
+Z11 !s110 1560536892
+!i10b 1
+Z12 !s108 1560536892.000000
+Z13 !s90 -reportprogress|300|-93|-work|work|D:/Development/VHDL/RISC_V_Micro/VHDL/OutputLogic.vhd|
+Z14 !s107 D:/Development/VHDL/RISC_V_Micro/VHDL/OutputLogic.vhd|
+!i113 1
+R4
+R5
+Aoutputlogic_arch
+R7
+R8
+R1
+R2
+DEx4 work 11 outputlogic 0 22 C7_YTm@Tj@bN813bP]75Z2
+l33
+L22
+V_Aj5GZo;NZU>iZX`ghj_G0
+!s100 OU68VE>VkDhY;gck@cQ>W1
+R3
+31
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R4
+R5
+Epc
+Z15 w1559436403
+R7
+R8
+Z16 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R1
+R2
+R0
+Z17 8D:/Development/VHDL/RISC_V_Micro/VHDL/PC.vhd
+Z18 FD:/Development/VHDL/RISC_V_Micro/VHDL/PC.vhd
+l0
+L9
+VAfMfV<gH3lHE]cNPdY@6C2
+!s100 AUU?IXOA^YlCd;X:=fzG>1
+R3
+31
+R11
+!i10b 1
+R12
+Z19 !s90 -reportprogress|300|-93|-work|work|D:/Development/VHDL/RISC_V_Micro/VHDL/PC.vhd|
+Z20 !s107 D:/Development/VHDL/RISC_V_Micro/VHDL/PC.vhd|
+!i113 1
+R4
+R5
+Aarch_pc
+R7
+R8
+R16
+R1
+R2
+DEx4 work 2 pc 0 22 AfMfV<gH3lHE]cNPdY@6C2
+l20
+L18
+VgRcDQgg6;TiO5@VK55KhG3
+!s100 ZNYTam:;aL8S0H^YV^0O43
+R3
+31
+R11
+!i10b 1
+R12
+R19
+R20
+!i113 1
+R4
+R5
+Ereg_file
+Z21 w1558997106
+R7
+R8
+R1
+R2
+R0
+Z22 8D:/Development/VHDL/RISC_V_Micro/VHDL/Reg_File.vhd
+Z23 FD:/Development/VHDL/RISC_V_Micro/VHDL/Reg_File.vhd
+l0
+L5
+VRIL^PoA:geQfRg@Z2iRIW1
+!s100 DX9[[o3G:@aj^O:6:c[Ih0
+R3
+31
+Z24 !s110 1560536891
+!i10b 1
+Z25 !s108 1560536891.000000
+Z26 !s90 -reportprogress|300|-93|-work|work|D:/Development/VHDL/RISC_V_Micro/VHDL/Reg_File.vhd|
+Z27 !s107 D:/Development/VHDL/RISC_V_Micro/VHDL/Reg_File.vhd|
+!i113 1
+R4
+R5
+Aarch_reg_file
+R7
+R8
+R1
+R2
+DEx4 work 8 reg_file 0 22 RIL^PoA:geQfRg@Z2iRIW1
+l23
+L18
+Vzn1bAc[zBJLm<mmcB2oc?3
+!s100 [he`mbGI1Wi2:5HG1zRO93
+R3
+31
+R24
+!i10b 1
+R25
+R26
+R27
+!i113 1
+R4
+R5
+Erising_edge_detector
+Z28 w1560455378
+R1
+R2
+R0
+Z29 8D:/Development/VHDL/RISC_V_Micro/VHDL/rising_edge_detector.vhd
+Z30 FD:/Development/VHDL/RISC_V_Micro/VHDL/rising_edge_detector.vhd
+l0
+L5
+V>8D>WjXPKN^5DG7T=03?O2
+!s100 W7gN^d=i9QN<lbDP^_;2S3
+R3
+31
+R24
+!i10b 1
+R25
+Z31 !s90 -reportprogress|300|-93|-work|work|D:/Development/VHDL/RISC_V_Micro/VHDL/rising_edge_detector.vhd|
+Z32 !s107 D:/Development/VHDL/RISC_V_Micro/VHDL/rising_edge_detector.vhd|
+!i113 1
+R4
+R5
+Abehavioral
+R1
+R2
+DEx4 work 20 rising_edge_detector 0 22 >8D>WjXPKN^5DG7T=03?O2
+l20
+L14
+Vm<SmH7fR>?>kJ;3[o97Eo3
+!s100 PGD^W@DKeKKoMnQ5bhW6P3
+R3
+31
+R24
+!i10b 1
+R25
+R31
+R32
+!i113 1
+R4
+R5

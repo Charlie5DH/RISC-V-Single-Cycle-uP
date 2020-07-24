@@ -1,0 +1,6 @@
+
+State Machine - |DataPath|rising_edge_detector:EdgDet|rising_edge_detector_fsm_curr_st
+Name rising_edge_detector_fsm_curr_st.ONE rising_edge_detector_fsm_curr_st.EDGE rising_edge_detector_fsm_curr_st.ZERO 
+rising_edge_detector_fsm_curr_st.ZERO 0 0 0 
+rising_edge_detector_fsm_curr_st.EDGE 0 1 1 
+rising_edge_detector_fsm_curr_st.ONE 1 0 1 

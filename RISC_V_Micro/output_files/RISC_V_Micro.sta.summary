@@ -1,0 +1,245 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'rising_edge_detector:EdgDet|rising_edge_detector_fsm_curr_st.EDGE'
+Slack : -32.384
+TNS   : -32610.343
+
+Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -29.304
+TNS   : -29074.021
+
+Type  : Slow 1100mV 85C Model Setup 'KEY[0]'
+Slack : -29.111
+TNS   : -29566.017
+
+Type  : Slow 1100mV 85C Model Hold 'KEY[0]'
+Slack : -2.142
+TNS   : -5.587
+
+Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
+Slack : -2.072
+TNS   : -5.377
+
+Type  : Slow 1100mV 85C Model Hold 'rising_edge_detector:EdgDet|rising_edge_detector_fsm_curr_st.EDGE'
+Slack : 1.870
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'rising_edge_detector:EdgDet|rising_edge_detector_fsm_curr_st.EDGE'
+Slack : -7.505
+TNS   : -7487.720
+
+Type  : Slow 1100mV 85C Model Recovery 'CLOCK_50'
+Slack : -3.975
+TNS   : -3935.135
+
+Type  : Slow 1100mV 85C Model Recovery 'KEY[0]'
+Slack : -3.852
+TNS   : -3793.562
+
+Type  : Slow 1100mV 85C Model Removal 'CLOCK_50'
+Slack : -1.060
+TNS   : -530.198
+
+Type  : Slow 1100mV 85C Model Removal 'KEY[0]'
+Slack : -0.820
+TNS   : -271.414
+
+Type  : Slow 1100mV 85C Model Removal 'rising_edge_detector:EdgDet|rising_edge_detector_fsm_curr_st.EDGE'
+Slack : 2.390
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.270
+TNS   : -2128.778
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
+Slack : -1.261
+TNS   : -2110.010
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'rising_edge_detector:EdgDet|rising_edge_detector_fsm_curr_st.EDGE'
+Slack : -0.443
+TNS   : -717.347
+
+Type  : Slow 1100mV 0C Model Setup 'rising_edge_detector:EdgDet|rising_edge_detector_fsm_curr_st.EDGE'
+Slack : -31.855
+TNS   : -31859.648
+
+Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -28.875
+TNS   : -28438.281
+
+Type  : Slow 1100mV 0C Model Setup 'KEY[0]'
+Slack : -28.721
+TNS   : -28956.382
+
+Type  : Slow 1100mV 0C Model Hold 'KEY[0]'
+Slack : -2.100
+TNS   : -5.401
+
+Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
+Slack : -2.059
+TNS   : -5.278
+
+Type  : Slow 1100mV 0C Model Hold 'rising_edge_detector:EdgDet|rising_edge_detector_fsm_curr_st.EDGE'
+Slack : 1.789
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'rising_edge_detector:EdgDet|rising_edge_detector_fsm_curr_st.EDGE'
+Slack : -7.443
+TNS   : -7448.736
+
+Type  : Slow 1100mV 0C Model Recovery 'CLOCK_50'
+Slack : -4.015
+TNS   : -4011.313
+
+Type  : Slow 1100mV 0C Model Recovery 'KEY[0]'
+Slack : -3.902
+TNS   : -3881.250
+
+Type  : Slow 1100mV 0C Model Removal 'CLOCK_50'
+Slack : -0.854
+TNS   : -341.821
+
+Type  : Slow 1100mV 0C Model Removal 'KEY[0]'
+Slack : -0.585
+TNS   : -105.954
+
+Type  : Slow 1100mV 0C Model Removal 'rising_edge_detector:EdgDet|rising_edge_detector_fsm_curr_st.EDGE'
+Slack : 2.499
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.275
+TNS   : -2183.698
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
+Slack : -1.242
+TNS   : -2110.486
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'rising_edge_detector:EdgDet|rising_edge_detector_fsm_curr_st.EDGE'
+Slack : -0.394
+TNS   : -679.842
+
+Type  : Fast 1100mV 85C Model Setup 'rising_edge_detector:EdgDet|rising_edge_detector_fsm_curr_st.EDGE'
+Slack : -18.900
+TNS   : -19279.023
+
+Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -17.228
+TNS   : -17361.609
+
+Type  : Fast 1100mV 85C Model Setup 'KEY[0]'
+Slack : -17.145
+TNS   : -17692.562
+
+Type  : Fast 1100mV 85C Model Hold 'KEY[0]'
+Slack : -1.353
+TNS   : -3.601
+
+Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
+Slack : -1.317
+TNS   : -3.493
+
+Type  : Fast 1100mV 85C Model Hold 'rising_edge_detector:EdgDet|rising_edge_detector_fsm_curr_st.EDGE'
+Slack : 0.936
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'rising_edge_detector:EdgDet|rising_edge_detector_fsm_curr_st.EDGE'
+Slack : -4.602
+TNS   : -4596.225
+
+Type  : Fast 1100mV 85C Model Recovery 'CLOCK_50'
+Slack : -2.688
+TNS   : -2667.151
+
+Type  : Fast 1100mV 85C Model Recovery 'KEY[0]'
+Slack : -2.641
+TNS   : -2613.054
+
+Type  : Fast 1100mV 85C Model Removal 'CLOCK_50'
+Slack : -0.806
+TNS   : -448.807
+
+Type  : Fast 1100mV 85C Model Removal 'KEY[0]'
+Slack : -0.532
+TNS   : -153.989
+
+Type  : Fast 1100mV 85C Model Removal 'rising_edge_detector:EdgDet|rising_edge_detector_fsm_curr_st.EDGE'
+Slack : 1.009
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.291
+TNS   : -2112.774
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
+Slack : -1.274
+TNS   : -2099.325
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'rising_edge_detector:EdgDet|rising_edge_detector_fsm_curr_st.EDGE'
+Slack : -0.218
+TNS   : -44.409
+
+Type  : Fast 1100mV 0C Model Setup 'rising_edge_detector:EdgDet|rising_edge_detector_fsm_curr_st.EDGE'
+Slack : -16.974
+TNS   : -17270.392
+
+Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -15.417
+TNS   : -15484.757
+
+Type  : Fast 1100mV 0C Model Setup 'KEY[0]'
+Slack : -15.359
+TNS   : -15797.155
+
+Type  : Fast 1100mV 0C Model Hold 'KEY[0]'
+Slack : -1.317
+TNS   : -3.493
+
+Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
+Slack : -1.297
+TNS   : -3.433
+
+Type  : Fast 1100mV 0C Model Hold 'rising_edge_detector:EdgDet|rising_edge_detector_fsm_curr_st.EDGE'
+Slack : 0.834
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'rising_edge_detector:EdgDet|rising_edge_detector_fsm_curr_st.EDGE'
+Slack : -4.540
+TNS   : -4590.702
+
+Type  : Fast 1100mV 0C Model Recovery 'CLOCK_50'
+Slack : -2.759
+TNS   : -2794.055
+
+Type  : Fast 1100mV 0C Model Recovery 'KEY[0]'
+Slack : -2.721
+TNS   : -2750.317
+
+Type  : Fast 1100mV 0C Model Removal 'CLOCK_50'
+Slack : -0.644
+TNS   : -315.377
+
+Type  : Fast 1100mV 0C Model Removal 'KEY[0]'
+Slack : -0.354
+TNS   : -51.621
+
+Type  : Fast 1100mV 0C Model Removal 'rising_edge_detector:EdgDet|rising_edge_detector_fsm_curr_st.EDGE'
+Slack : 1.050
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.222
+TNS   : -2055.954
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
+Slack : -1.209
+TNS   : -2054.650
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'rising_edge_detector:EdgDet|rising_edge_detector_fsm_curr_st.EDGE'
+Slack : -0.125
+TNS   : -10.615
+
+------------------------------------------------------------
