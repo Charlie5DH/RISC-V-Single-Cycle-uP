@@ -1,4 +1,0 @@
-powerstone
-==========
-
-The powerstone benchmark
