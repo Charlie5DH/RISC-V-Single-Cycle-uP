@@ -1,0 +1,71 @@
+--------------------------------
+||        ||        ||        ||
+||        ||        ||        ||
+||        ||        ||        ||
+||        ||        ||        ||
+--------------------------------
+||        ||        ||        ||
+||        ||        ||        ||
+||        ||        ||        ||
+||        ||        ||        ||
+--------------------------------
+||        ||        ||        ||
+||        ||        ||        ||
+||        ||        ||        ||
+||        ||        ||        ||
+--------------------------------
+
+width of a cell: 8 chars (+ 2 * border_size(2))
+-> width of frame 3*8+4*2 = 32
+
+height of a cell: 4 chars (+2 * border_size(1))
+-> height of frame 3*4 + 4*1 = 16
+
+
+Elements:
+
+ \    /
+   \/
+   /\ 
+ /    \
+ 
+as cross
+
+  (--)  
+ (    )
+ (    )
+  (--)
+  
+as dot
+
+The cursor is reprensented by adding an extra * frame to the cell, e.g. for middle
+--------------------------------
+||        ||        ||        ||
+||        ||        ||        ||
+||        ||        ||        ||
+||        ||        ||        ||
+--------------------------------
+||        ||*      *||        ||
+||        ||*      *||        ||
+||        ||*      *||        ||
+||        ||*      *||        ||
+--------------------------------
+||        ||        ||        ||
+||        ||        ||        ||
+||        ||        ||        ||
+||        ||        ||        ||
+--------------------------------
+
+
+User-IO:
+South/West/East/North Buttons for Navigation throughout the cells
+Button (?) for placing an element
+
+2 LEDs for indicating the turn (player1 or player2)
+
+1 LED for indicating weather the game is over
+
+
+
+
+

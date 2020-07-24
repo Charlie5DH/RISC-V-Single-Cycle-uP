@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="info" file="Place" num="834" delta="old" >Only a subset of IOs are locked. Out of <arg fmt="%d" index="1">63</arg> IOs, <arg fmt="%d" index="2">62</arg> are locked and <arg fmt="%d" index="3">1</arg> are not locked. <arg fmt="%s" index="4">If you would like to print the names of these IOs, please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1.</arg> 
+</msg>
+
+<msg type="warning" file="Route" num="441" delta="old" >The router has detected a very high timing score (<arg fmt="%.0f" index="1">1206878</arg>) for this design. It is extremely unlikely the router will be able to meet your timing requirements. To prevent excessive run time the router will change strategy. The router will now work to completely route this design but not to improve timing. This behavior will allow you to use the Static Timing Report and FPGA Editor to isolate the paths with timing problems. The cause of this behavior is either overly difficult constraints, or issues with the implementation or synthesis of logic in the critical timing path. If you would prefer the router continue trying to meet timing and you are willing to accept a long run time set the option &quot;-xe c&quot; to override the present behavior.
+</msg>
+
+<msg type="warning" file="Route" num="455" delta="old" >CLK Net:<arg fmt="%s" index="1">clk_cpu</arg> may have excessive skew because 
+   <arg fmt="%d" index="2">0</arg> CLK pins and <arg fmt="%d" index="3">1</arg> NON_CLK pins failed to route using a CLK template.
+</msg>
+
+<msg type="warning" file="Route" num="455" delta="old" >CLK Net:<arg fmt="%s" index="1">clk_tb</arg> may have excessive skew because 
+   <arg fmt="%d" index="2">0</arg> CLK pins and <arg fmt="%d" index="3">1</arg> NON_CLK pins failed to route using a CLK template.
+</msg>
+
+<msg type="warning" file="Par" num="468" delta="old" >Your design did not meet timing.  The following are some suggestions to assist you to meet timing in your design.
+
+Review the timing report using Timing Analyzer (In ISE select &quot;Post-Place &amp;
+Route Static Timing Report&quot;). Go to the failing constraint(s) and evaluate the failing paths for each constraint.
+
+Try the Design Goal and Strategies for Timing Performance(In ISE select Project -&gt; Design Goals &amp; Strategies) to ensure the best options are set in the tools for timing closure.
+
+</msg>
+
+</messages>
+

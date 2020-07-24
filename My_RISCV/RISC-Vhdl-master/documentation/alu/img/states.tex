@@ -1,0 +1,21 @@
+\input{statemachine}
+
+\Statemachine{
+\Point{s}{}
+\State{s1}{right =20pt of s}{Operanden lesen}
+\Point{p1}{below =30pt of s1}
+\Point{p2}{above =30pt of s1}
+\State{s2}{right =30pt of p1}{Operation}
+\State{s3}{right =30pt of p2}{WriteBack}
+\State{s4}{right =100pt of s2}{Unsigned Div}
+\State{s5}{left =100pt of s2}{Signed Div}
+}{
+\Edge{->}{s}{s1}{}
+\Edge{->}{s1}{s2}{}
+\Edge{->}{s2}{s3}{}
+\Edge{->}{s2}{s4}{unsigned}
+\Edge{->}{s2}{s5}{signed}
+\draw[->] (s4) |- (s3);
+\draw[->] (s5) |- (s3);
+\Edge{->}{s3}{s1}{}
+}

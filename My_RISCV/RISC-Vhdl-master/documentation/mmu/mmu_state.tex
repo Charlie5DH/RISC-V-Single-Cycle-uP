@@ -1,0 +1,28 @@
+\input{statemachine}
+
+\Statemachine{
+\Point{s}{}
+\State{s1}{below =10pt of s}{\textbf{MMU-IDLE}\\ \hline Auf \Vhdl{work\_in = '1'} warten und \\ ggf. Anfrage an Controller absetzten}
+\State{s2}{below =20pt of s1}{\textbf{MMU-WAITING}\\ \hline Auf Controller warten}
+\State{s3}{below =30pt of s2}{\textbf{MMU-DATA-VALID}\\ \hline Ggf. gelesene Daten puffern \\ Synchronisation mit DDR2-SDRAM}
+\State{s4}{right =70pt of s3}{\textbf{MMU-READ-NEXT}\\ \hline Ggf. n\"achste Anfrage \\vorbereiten}
+\State{s5}{left =70pt of s3}{\textbf{MMU-WRITE-NEXT}\\ \hline Ggf. n\"achste Anfrage \\vorbereiten}
+
+\State{s6}{above =30 pt of s4}{\textbf{MMU-READ-DONE}\\ \hline Gepufferte Daten ausgeben \\ \Vhdl{ack\_out <= '1'}}
+\State{s7}{above =30 pt of s5}{\textbf{MMU-WRITE-DONE}\\ \hline \Vhdl{ack\_out <= '1'}}
+\State{s8}{left = 85 pt of s1}{\textbf{MMU-RESET}\\ \hline Auf Controller warten}
+
+}{
+\Edge{->}{s}{s1}{}
+\Edge{->}{s1}{s2}{\Vhdl{work\_in='1'}}
+\Edge{->}{s2}{s3}{\textit{Anfrage erfolgreich bearbeitet}}
+\Edge{->}{s3}{s4}{\textit{Lesezugriff}}
+\Edge{->}{s3}{s5}{\textit{Schreibzugriff}}
+\Edge{->}{s4}{s6}{\textit{Schreibzugriffe erledigt}}
+\Edge{->}{s5}{s7}{\textit{Lesezugriffe erledigt}}
+\Edge{->}{s4}{s2}{}
+\Edge{->}{s5}{s2}{}
+\Edge{->}{s6}{s1}{}
+\Edge{->}{s7}{s1}{}
+\Edge{->}{s8}{s1}{\textit{Reset erfolgt}}
+}

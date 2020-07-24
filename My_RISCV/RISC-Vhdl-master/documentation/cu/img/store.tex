@@ -1,0 +1,24 @@
+\input{statemachine}
+
+\Statemachine{
+\Point{s}{}
+\State{s1}{right =20pt of s}{ALU: R[0] := \Ipart{rs1} + \Ipart{imm}}
+\State{s2}{right =30pt of s1}{3 Takte warten}
+\State{s3}{right =30pt of s2}{\Vhdl{alu\_data\_in} auf Adressleitung der MMU zwischenspeichern \\ ALU: R[0] := 0 + \Ipart{rs2}}
+\Point{m1}{below =20pt of s2}
+\State{s4}{below =30pt of s1}{3 Takte warten}
+\State{s5}{right =30pt of s4}{MMU: Speichere \(width\) Bytes aus \Vhdl{alu\_data\_in} an zwischengespeicherte Adresse}
+\Point{m2}{below =20pt of s5}
+\State{s6}{below =30pt of s4}{MMU: N\"achsten Befehl holen}
+\State{s7}{right =80pt of s6}{PC := PC + 4 \\ IR := Neuer Befehl}
+\Point{e}{right =20pt of s7}
+}{
+\Edge{->}{s}{s1}{}
+\Edge{->}{s1}{s2}{}
+\Edge{->}{s2}{s3}{}
+\Longedge{-}{s3}{m1}{s4}{->}{}{}{}{}
+\Edge{->}{s4}{s5}{}
+\Longedge{-}{s5}{m2}{s6}{->}{}{}{above}{\Vhdl{mmu\_ack\_in=1}}
+\Edge{->}{s6}{s7}{\Vhdl{mmu\_ack\_in=1}}
+\Edge{->}{s7}{e}{}
+}

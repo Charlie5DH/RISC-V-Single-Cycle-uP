@@ -1,0 +1,21 @@
+\input{statemachine}
+
+\Statemachine{
+\Point{s}{}
+\State{s1}{right =20pt of s}{ALU: R[0] := \Ipart{rs1} + \Ipart{imm}}
+\State{s2}{right =30pt of s1}{3 Takte warten}
+\State{s3}{right =30pt of s2}{MMU: Lese 4 Byte von Adresse \Vhdl{alu\_data\_in}}
+\Point{m}{below =20pt of s2}
+\State{s4}{below =40pt of s1}{ALU: R[\Ipart{rd}] := \Vhdl{mmu\_data\_in} auf \(width\) Bytes zugeschnitten \\ MMU: N\"achsten Befehl holen}
+\State{s5}{right =30pt of s4}{3 Takte warten}
+\State{s6}{right =80pt of s5}{PC := PC + 4 \\ IR := Neuer Befehl}
+\Point{e}{right =20pt of s6}
+}{
+\Edge{->}{s}{s1}{}
+\Edge{->}{s1}{s2}{}
+\Edge{->}{s2}{s3}{}
+\Longedge{-}{s3}{m}{s4}{->}{}{}{above}{\Vhdl{mmu\_ack\_in=1}}
+\Edge{->}{s4}{s5}{}
+\Edge{->}{s5}{s6}{\Vhdl{mmu\_ack\_in=1}}
+\Edge{->}{s6}{e}{}
+}
