@@ -1,0 +1,22 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vcom -93 -work work {D:/Development/VHDL/RISC_V_Micro/VHDL/rising_edge_detector.vhd}
+vcom -93 -work work {D:/Development/VHDL/RISC_V_Micro/VHDL/Reg_File.vhd}
+vcom -93 -work work {D:/Development/VHDL/RISC_V_Micro/VHDL/PC.vhd}
+vcom -93 -work work {D:/Development/VHDL/RISC_V_Micro/VHDL/OutputLogic.vhd}
+vcom -93 -work work {D:/Development/VHDL/RISC_V_Micro/VHDL/Mux_ToRegFile.vhd}
+vcom -93 -work work {D:/Development/VHDL/RISC_V_Micro/VHDL/Mux.vhd}
+vcom -93 -work work {D:/Development/VHDL/RISC_V_Micro/VHDL/Instruction_Mem.vhd}
+vcom -93 -work work {D:/Development/VHDL/RISC_V_Micro/VHDL/Immediate_Generator.vhd}
+vcom -93 -work work {D:/Development/VHDL/RISC_V_Micro/VHDL/DataPath.vhd}
+vcom -93 -work work {D:/Development/VHDL/RISC_V_Micro/VHDL/Data_Mem.vhd}
+vcom -93 -work work {D:/Development/VHDL/RISC_V_Micro/VHDL/Control.vhd}
+vcom -93 -work work {D:/Development/VHDL/RISC_V_Micro/VHDL/Branch_Control.vhd}
+vcom -93 -work work {D:/Development/VHDL/RISC_V_Micro/VHDL/bcdTo7Seg.vhd}
+vcom -93 -work work {D:/Development/VHDL/RISC_V_Micro/VHDL/ALU_RV32.vhd}
+

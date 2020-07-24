@@ -1,0 +1,1232 @@
+Analysis & Synthesis report for RISC_V_Micro
+Thu Jun 27 13:42:29 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |DataPath|rising_edge_detector:EdgDet|rising_edge_detector_fsm_curr_st
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: multiplier2:Mult
+ 15. Parameter Settings for User Entity Instance: Mux_ToRegFile:MuxReg
+ 16. Port Connectivity Checks: "Mux:Mux2"
+ 17. Port Connectivity Checks: "Mux_ToRegFile:MuxReg"
+ 18. Port Connectivity Checks: "Mux:Mux1"
+ 19. Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:15:col_i:0:FullAdd"
+ 20. Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:14:col_i:0:FullAdd"
+ 21. Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:13:col_i:0:FullAdd"
+ 22. Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:12:col_i:0:FullAdd"
+ 23. Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:11:col_i:0:FullAdd"
+ 24. Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:10:col_i:0:FullAdd"
+ 25. Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:9:col_i:0:FullAdd"
+ 26. Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:8:col_i:0:FullAdd"
+ 27. Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:7:col_i:0:FullAdd"
+ 28. Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:6:col_i:0:FullAdd"
+ 29. Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:5:col_i:0:FullAdd"
+ 30. Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:4:col_i:0:FullAdd"
+ 31. Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:3:col_i:0:FullAdd"
+ 32. Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:2:col_i:0:FullAdd"
+ 33. Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:1:col_i:0:FullAdd"
+ 34. Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:1:col_i:15:FullAdd"
+ 35. Port Connectivity Checks: "ALU_RV32:ALU"
+ 36. Post-Synthesis Netlist Statistics for Top Partition
+ 37. Elapsed Time Per Partition
+ 38. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Thu Jun 27 13:42:29 2019       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; RISC_V_Micro                                ;
+; Top-level Entity Name           ; DataPath                                    ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 1154                                        ;
+; Total pins                      ; 67                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; DataPath           ; RISC_V_Micro       ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                             ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                      ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+---------+
+; VHDL/multiplier2.vhd             ; yes             ; User VHDL File  ; D:/Development/VHDL/RISC_V_Micro_V3/VHDL/multiplier2.vhd          ;         ;
+; VHDL/FullAdder.vhd               ; yes             ; User VHDL File  ; D:/Development/VHDL/RISC_V_Micro_V3/VHDL/FullAdder.vhd            ;         ;
+; VHDL/rising_edge_detector.vhd    ; yes             ; User VHDL File  ; D:/Development/VHDL/RISC_V_Micro_V3/VHDL/rising_edge_detector.vhd ;         ;
+; VHDL/Reg_File.vhd                ; yes             ; User VHDL File  ; D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Reg_File.vhd             ;         ;
+; VHDL/PC.vhd                      ; yes             ; User VHDL File  ; D:/Development/VHDL/RISC_V_Micro_V3/VHDL/PC.vhd                   ;         ;
+; VHDL/OutputLogic.vhd             ; yes             ; User VHDL File  ; D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd          ;         ;
+; VHDL/Mux_ToRegFile.vhd           ; yes             ; User VHDL File  ; D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Mux_ToRegFile.vhd        ;         ;
+; VHDL/Mux.vhd                     ; yes             ; User VHDL File  ; D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Mux.vhd                  ;         ;
+; VHDL/Instruction_Mem.vhd         ; yes             ; User VHDL File  ; D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Instruction_Mem.vhd      ;         ;
+; VHDL/Immediate_Generator.vhd     ; yes             ; User VHDL File  ; D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Immediate_Generator.vhd  ;         ;
+; VHDL/DataPath.vhd                ; yes             ; User VHDL File  ; D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd             ;         ;
+; VHDL/Data_Mem.vhd                ; yes             ; User VHDL File  ; D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Data_Mem.vhd             ;         ;
+; VHDL/Control.vhd                 ; yes             ; User VHDL File  ; D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd              ;         ;
+; VHDL/Branch_Control.vhd          ; yes             ; User VHDL File  ; D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Branch_Control.vhd       ;         ;
+; VHDL/bcdTo7Seg.vhd               ; yes             ; User VHDL File  ; D:/Development/VHDL/RISC_V_Micro_V3/VHDL/bcdTo7Seg.vhd            ;         ;
+; VHDL/ALU_RV32.vhd                ; yes             ; User VHDL File  ; D:/Development/VHDL/RISC_V_Micro_V3/VHDL/ALU_RV32.vhd             ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimate of Logic utilization (ALMs needed) ; 2009         ;
+;                                             ;              ;
+; Combinational ALUT usage for logic          ; 2561         ;
+;     -- 7 input functions                    ; 35           ;
+;     -- 6 input functions                    ; 1315         ;
+;     -- 5 input functions                    ; 313          ;
+;     -- 4 input functions                    ; 288          ;
+;     -- <=3 input functions                  ; 610          ;
+;                                             ;              ;
+; Dedicated logic registers                   ; 1154         ;
+;                                             ;              ;
+; I/O pins                                    ; 67           ;
+;                                             ;              ;
+; Total DSP Blocks                            ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; KEY[0]~input ;
+; Maximum fan-out                             ; 1161         ;
+; Total fan-out                               ; 17220        ;
+; Average fan-out                             ; 4.47         ;
++---------------------------------------------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                           ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                             ; Entity Name          ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------+----------------------+--------------+
+; |DataPath                                    ; 2561 (63)           ; 1154 (1)                  ; 0                 ; 0          ; 67   ; 0            ; |DataPath                                                       ; DataPath             ; work         ;
+;    |ALU_RV32:ALU|                            ; 289 (289)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|ALU_RV32:ALU                                          ; ALU_RV32             ; work         ;
+;    |Branch_Control:BRControl|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|Branch_Control:BRControl                              ; Branch_Control       ; work         ;
+;    |Control:Ctrl|                            ; 59 (59)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|Control:Ctrl                                          ; Control              ; work         ;
+;    |Data_Mem:RAM|                            ; 299 (299)           ; 128 (128)                 ; 0                 ; 0          ; 0    ; 0            ; |DataPath|Data_Mem:RAM                                          ; Data_Mem             ; work         ;
+;    |Immediate_Generator:Imm|                 ; 76 (76)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|Immediate_Generator:Imm                               ; Immediate_Generator  ; work         ;
+;    |Instruction_Mem:ROM|                     ; 103 (103)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|Instruction_Mem:ROM                                   ; Instruction_Mem      ; work         ;
+;    |Mux:Mux0|                                ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|Mux:Mux0                                              ; Mux                  ; work         ;
+;    |Mux:Mux1|                                ; 24 (24)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|Mux:Mux1                                              ; Mux                  ; work         ;
+;    |Mux_ToRegFile:MuxReg|                    ; 159 (159)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|Mux_ToRegFile:MuxReg                                  ; Mux_ToRegFile        ; work         ;
+;    |OutputLogic:outInterface|                ; 93 (51)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|OutputLogic:outInterface                              ; OutputLogic          ; work         ;
+;       |bcdTo7Seg:dec0|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|OutputLogic:outInterface|bcdTo7Seg:dec0               ; bcdTo7Seg            ; work         ;
+;       |bcdTo7Seg:dec1|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|OutputLogic:outInterface|bcdTo7Seg:dec1               ; bcdTo7Seg            ; work         ;
+;       |bcdTo7Seg:dec2|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|OutputLogic:outInterface|bcdTo7Seg:dec2               ; bcdTo7Seg            ; work         ;
+;       |bcdTo7Seg:dec3|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|OutputLogic:outInterface|bcdTo7Seg:dec3               ; bcdTo7Seg            ; work         ;
+;       |bcdTo7Seg:dec4|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|OutputLogic:outInterface|bcdTo7Seg:dec4               ; bcdTo7Seg            ; work         ;
+;       |bcdTo7Seg:dec5|                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|OutputLogic:outInterface|bcdTo7Seg:dec5               ; bcdTo7Seg            ; work         ;
+;    |PC:PCount|                               ; 1 (1)               ; 31 (31)                   ; 0                 ; 0          ; 0    ; 0            ; |DataPath|PC:PCount                                             ; PC                   ; work         ;
+;    |Reg_File:RFILE|                          ; 751 (751)           ; 992 (992)                 ; 0                 ; 0          ; 0    ; 0            ; |DataPath|Reg_File:RFILE                                        ; Reg_File             ; work         ;
+;    |multiplier2:Mult|                        ; 636 (207)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult                                      ; multiplier2          ; work         ;
+;       |FullAdder:\row_j:10:col_i:10:FullAdd| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:10:col_i:10:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:10:col_i:11:FullAdd| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:10:col_i:11:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:10:col_i:12:FullAdd| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:10:col_i:12:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:10:col_i:13:FullAdd| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:10:col_i:13:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:10:col_i:14:FullAdd| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:10:col_i:14:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:10:col_i:15:FullAdd| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:10:col_i:15:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:10:col_i:1:FullAdd|  ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:10:col_i:1:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:10:col_i:2:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:10:col_i:2:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:10:col_i:3:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:10:col_i:3:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:10:col_i:4:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:10:col_i:4:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:10:col_i:5:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:10:col_i:5:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:10:col_i:6:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:10:col_i:6:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:10:col_i:7:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:10:col_i:7:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:10:col_i:8:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:10:col_i:8:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:10:col_i:9:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:10:col_i:9:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:11:col_i:10:FullAdd| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:11:col_i:10:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:11:col_i:11:FullAdd| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:11:col_i:11:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:11:col_i:12:FullAdd| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:11:col_i:12:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:11:col_i:13:FullAdd| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:11:col_i:13:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:11:col_i:14:FullAdd| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:11:col_i:14:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:11:col_i:15:FullAdd| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:11:col_i:15:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:11:col_i:1:FullAdd|  ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:11:col_i:1:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:11:col_i:2:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:11:col_i:2:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:11:col_i:3:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:11:col_i:3:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:11:col_i:4:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:11:col_i:4:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:11:col_i:5:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:11:col_i:5:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:11:col_i:6:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:11:col_i:6:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:11:col_i:7:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:11:col_i:7:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:11:col_i:8:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:11:col_i:8:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:11:col_i:9:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:11:col_i:9:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:12:col_i:10:FullAdd| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:12:col_i:10:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:12:col_i:11:FullAdd| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:12:col_i:11:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:12:col_i:12:FullAdd| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:12:col_i:12:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:12:col_i:13:FullAdd| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:12:col_i:13:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:12:col_i:14:FullAdd| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:12:col_i:14:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:12:col_i:15:FullAdd| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:12:col_i:15:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:12:col_i:1:FullAdd|  ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:12:col_i:1:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:12:col_i:2:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:12:col_i:2:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:12:col_i:3:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:12:col_i:3:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:12:col_i:4:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:12:col_i:4:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:12:col_i:5:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:12:col_i:5:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:12:col_i:6:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:12:col_i:6:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:12:col_i:7:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:12:col_i:7:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:12:col_i:8:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:12:col_i:8:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:12:col_i:9:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:12:col_i:9:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:13:col_i:0:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:13:col_i:0:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:13:col_i:10:FullAdd| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:13:col_i:10:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:13:col_i:11:FullAdd| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:13:col_i:11:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:13:col_i:12:FullAdd| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:13:col_i:12:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:13:col_i:13:FullAdd| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:13:col_i:13:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:13:col_i:14:FullAdd| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:13:col_i:14:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:13:col_i:15:FullAdd| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:13:col_i:15:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:13:col_i:1:FullAdd|  ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:13:col_i:1:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:13:col_i:2:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:13:col_i:2:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:13:col_i:3:FullAdd|  ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:13:col_i:3:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:13:col_i:5:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:13:col_i:5:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:13:col_i:6:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:13:col_i:6:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:13:col_i:7:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:13:col_i:7:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:13:col_i:8:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:13:col_i:8:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:13:col_i:9:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:13:col_i:9:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:14:col_i:10:FullAdd| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:14:col_i:10:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:14:col_i:11:FullAdd| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:14:col_i:11:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:14:col_i:12:FullAdd| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:14:col_i:12:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:14:col_i:13:FullAdd| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:14:col_i:13:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:14:col_i:14:FullAdd| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:14:col_i:14:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:14:col_i:15:FullAdd| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:14:col_i:15:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:14:col_i:1:FullAdd|  ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:14:col_i:1:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:14:col_i:2:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:14:col_i:2:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:14:col_i:3:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:14:col_i:3:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:14:col_i:4:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:14:col_i:4:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:14:col_i:6:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:14:col_i:6:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:14:col_i:7:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:14:col_i:7:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:14:col_i:8:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:14:col_i:8:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:14:col_i:9:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:14:col_i:9:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:15:col_i:0:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:15:col_i:0:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:15:col_i:10:FullAdd| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:15:col_i:10:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:15:col_i:12:FullAdd| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:15:col_i:12:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:15:col_i:13:FullAdd| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:15:col_i:13:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:15:col_i:14:FullAdd| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:15:col_i:14:FullAdd ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:15:col_i:1:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:15:col_i:1:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:15:col_i:2:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:15:col_i:2:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:15:col_i:3:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:15:col_i:3:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:15:col_i:4:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:15:col_i:4:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:15:col_i:5:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:15:col_i:5:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:15:col_i:6:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:15:col_i:6:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:15:col_i:7:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:15:col_i:7:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:15:col_i:8:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:15:col_i:8:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:1:col_i:0:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:1:col_i:0:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:1:col_i:10:FullAdd|  ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:1:col_i:10:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:1:col_i:11:FullAdd|  ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:1:col_i:11:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:1:col_i:12:FullAdd|  ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:1:col_i:12:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:1:col_i:13:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:1:col_i:13:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:1:col_i:14:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:1:col_i:14:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:1:col_i:1:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:1:col_i:1:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:1:col_i:2:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:1:col_i:2:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:1:col_i:3:FullAdd|   ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:1:col_i:3:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:1:col_i:4:FullAdd|   ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:1:col_i:4:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:1:col_i:5:FullAdd|   ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:1:col_i:5:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:1:col_i:6:FullAdd|   ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:1:col_i:6:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:1:col_i:7:FullAdd|   ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:1:col_i:7:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:1:col_i:8:FullAdd|   ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:1:col_i:8:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:1:col_i:9:FullAdd|   ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:1:col_i:9:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:2:col_i:0:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:2:col_i:0:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:2:col_i:10:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:2:col_i:10:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:2:col_i:11:FullAdd|  ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:2:col_i:11:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:2:col_i:12:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:2:col_i:12:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:2:col_i:13:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:2:col_i:13:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:2:col_i:14:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:2:col_i:14:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:2:col_i:15:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:2:col_i:15:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:2:col_i:1:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:2:col_i:1:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:2:col_i:2:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:2:col_i:2:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:2:col_i:3:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:2:col_i:3:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:2:col_i:4:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:2:col_i:4:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:2:col_i:5:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:2:col_i:5:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:2:col_i:6:FullAdd|   ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:2:col_i:6:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:2:col_i:7:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:2:col_i:7:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:2:col_i:8:FullAdd|   ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:2:col_i:8:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:2:col_i:9:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:2:col_i:9:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:3:col_i:0:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:3:col_i:0:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:3:col_i:10:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:3:col_i:10:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:3:col_i:11:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:3:col_i:11:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:3:col_i:12:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:3:col_i:12:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:3:col_i:13:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:3:col_i:13:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:3:col_i:14:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:3:col_i:14:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:3:col_i:15:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:3:col_i:15:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:3:col_i:1:FullAdd|   ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:3:col_i:1:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:3:col_i:2:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:3:col_i:2:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:3:col_i:3:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:3:col_i:3:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:3:col_i:4:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:3:col_i:4:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:3:col_i:5:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:3:col_i:5:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:3:col_i:6:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:3:col_i:6:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:3:col_i:7:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:3:col_i:7:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:3:col_i:8:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:3:col_i:8:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:3:col_i:9:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:3:col_i:9:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:4:col_i:0:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:4:col_i:0:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:4:col_i:10:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:4:col_i:10:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:4:col_i:11:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:4:col_i:11:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:4:col_i:12:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:4:col_i:12:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:4:col_i:13:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:4:col_i:13:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:4:col_i:14:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:4:col_i:14:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:4:col_i:15:FullAdd|  ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:4:col_i:15:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:4:col_i:1:FullAdd|   ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:4:col_i:1:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:4:col_i:2:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:4:col_i:2:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:4:col_i:3:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:4:col_i:3:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:4:col_i:4:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:4:col_i:4:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:4:col_i:5:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:4:col_i:5:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:4:col_i:6:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:4:col_i:6:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:4:col_i:7:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:4:col_i:7:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:4:col_i:8:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:4:col_i:8:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:4:col_i:9:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:4:col_i:9:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:5:col_i:0:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:5:col_i:0:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:5:col_i:10:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:5:col_i:10:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:5:col_i:11:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:5:col_i:11:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:5:col_i:12:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:5:col_i:12:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:5:col_i:13:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:5:col_i:13:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:5:col_i:14:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:5:col_i:14:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:5:col_i:1:FullAdd|   ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:5:col_i:1:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:5:col_i:3:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:5:col_i:3:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:5:col_i:4:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:5:col_i:4:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:5:col_i:5:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:5:col_i:5:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:5:col_i:6:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:5:col_i:6:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:5:col_i:7:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:5:col_i:7:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:5:col_i:8:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:5:col_i:8:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:5:col_i:9:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:5:col_i:9:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:6:col_i:10:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:6:col_i:10:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:6:col_i:11:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:6:col_i:11:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:6:col_i:12:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:6:col_i:12:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:6:col_i:13:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:6:col_i:13:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:6:col_i:14:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:6:col_i:14:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:6:col_i:15:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:6:col_i:15:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:6:col_i:1:FullAdd|   ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:6:col_i:1:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:6:col_i:3:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:6:col_i:3:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:6:col_i:4:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:6:col_i:4:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:6:col_i:5:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:6:col_i:5:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:6:col_i:6:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:6:col_i:6:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:6:col_i:7:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:6:col_i:7:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:6:col_i:8:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:6:col_i:8:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:6:col_i:9:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:6:col_i:9:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:7:col_i:0:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:7:col_i:0:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:7:col_i:10:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:7:col_i:10:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:7:col_i:11:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:7:col_i:11:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:7:col_i:12:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:7:col_i:12:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:7:col_i:13:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:7:col_i:13:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:7:col_i:14:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:7:col_i:14:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:7:col_i:15:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:7:col_i:15:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:7:col_i:1:FullAdd|   ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:7:col_i:1:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:7:col_i:3:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:7:col_i:3:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:7:col_i:4:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:7:col_i:4:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:7:col_i:5:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:7:col_i:5:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:7:col_i:6:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:7:col_i:6:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:7:col_i:7:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:7:col_i:7:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:7:col_i:8:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:7:col_i:8:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:7:col_i:9:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:7:col_i:9:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:8:col_i:10:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:8:col_i:10:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:8:col_i:11:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:8:col_i:11:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:8:col_i:12:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:8:col_i:12:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:8:col_i:13:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:8:col_i:13:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:8:col_i:14:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:8:col_i:14:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:8:col_i:15:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:8:col_i:15:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:8:col_i:1:FullAdd|   ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:8:col_i:1:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:8:col_i:2:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:8:col_i:2:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:8:col_i:3:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:8:col_i:3:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:8:col_i:4:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:8:col_i:4:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:8:col_i:5:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:8:col_i:5:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:8:col_i:6:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:8:col_i:6:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:8:col_i:7:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:8:col_i:7:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:8:col_i:8:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:8:col_i:8:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:8:col_i:9:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:8:col_i:9:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:9:col_i:10:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:9:col_i:10:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:9:col_i:11:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:9:col_i:11:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:9:col_i:12:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:9:col_i:12:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:9:col_i:13:FullAdd|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:9:col_i:13:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:9:col_i:14:FullAdd|  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:9:col_i:14:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:9:col_i:15:FullAdd|  ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:9:col_i:15:FullAdd  ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:9:col_i:1:FullAdd|   ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:9:col_i:1:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:9:col_i:2:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:9:col_i:2:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:9:col_i:3:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:9:col_i:3:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:9:col_i:4:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:9:col_i:4:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:9:col_i:5:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:9:col_i:5:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:9:col_i:6:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:9:col_i:6:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:9:col_i:7:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:9:col_i:7:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:9:col_i:8:FullAdd|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:9:col_i:8:FullAdd   ; FullAdder            ; work         ;
+;       |FullAdder:\row_j:9:col_i:9:FullAdd|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|multiplier2:Mult|FullAdder:\row_j:9:col_i:9:FullAdd   ; FullAdder            ; work         ;
+;    |rising_edge_detector:EdgDet|             ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |DataPath|rising_edge_detector:EdgDet                           ; rising_edge_detector ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------+----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |DataPath|rising_edge_detector:EdgDet|rising_edge_detector_fsm_curr_st                                                                       ;
++---------------------------------------+--------------------------------------+---------------------------------------+---------------------------------------+
+; Name                                  ; rising_edge_detector_fsm_curr_st.ONE ; rising_edge_detector_fsm_curr_st.EDGE ; rising_edge_detector_fsm_curr_st.ZERO ;
++---------------------------------------+--------------------------------------+---------------------------------------+---------------------------------------+
+; rising_edge_detector_fsm_curr_st.ZERO ; 0                                    ; 0                                     ; 0                                     ;
+; rising_edge_detector_fsm_curr_st.EDGE ; 0                                    ; 1                                     ; 1                                     ;
+; rising_edge_detector_fsm_curr_st.ONE  ; 1                                    ; 0                                     ; 1                                     ;
++---------------------------------------+--------------------------------------+---------------------------------------+---------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                           ;
++-----------------------------------------------------+--------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal            ; Free of Timing Hazards ;
++-----------------------------------------------------+--------------------------------+------------------------+
+; OutputLogic:outInterface|LEDS[0]                    ; OutputLogic:outInterface|Mux37 ; yes                    ;
+; OutputLogic:outInterface|LEDS[1]                    ; OutputLogic:outInterface|Mux37 ; yes                    ;
+; OutputLogic:outInterface|LEDS[2]                    ; OutputLogic:outInterface|Mux37 ; yes                    ;
+; OutputLogic:outInterface|LEDS[3]                    ; OutputLogic:outInterface|Mux37 ; yes                    ;
+; OutputLogic:outInterface|LEDS[4]                    ; OutputLogic:outInterface|Mux37 ; yes                    ;
+; OutputLogic:outInterface|LEDS[5]                    ; OutputLogic:outInterface|Mux37 ; yes                    ;
+; OutputLogic:outInterface|LEDS[6]                    ; OutputLogic:outInterface|Mux37 ; yes                    ;
+; OutputLogic:outInterface|LEDS[7]                    ; OutputLogic:outInterface|Mux37 ; yes                    ;
+; OutputLogic:outInterface|LEDS[8]                    ; OutputLogic:outInterface|Mux37 ; yes                    ;
+; OutputLogic:outInterface|LEDS[9]                    ; OutputLogic:outInterface|Mux37 ; yes                    ;
+; OutputLogic:outInterface|bcd0[0]                    ; OutputLogic:outInterface|Mux19 ; yes                    ;
+; OutputLogic:outInterface|bcd0[1]                    ; OutputLogic:outInterface|Mux19 ; yes                    ;
+; OutputLogic:outInterface|bcd0[2]                    ; OutputLogic:outInterface|Mux19 ; yes                    ;
+; OutputLogic:outInterface|bcd0[3]                    ; OutputLogic:outInterface|Mux19 ; yes                    ;
+; OutputLogic:outInterface|bcd1[0]                    ; OutputLogic:outInterface|Mux19 ; yes                    ;
+; OutputLogic:outInterface|bcd1[1]                    ; OutputLogic:outInterface|Mux19 ; yes                    ;
+; OutputLogic:outInterface|bcd1[2]                    ; OutputLogic:outInterface|Mux19 ; yes                    ;
+; OutputLogic:outInterface|bcd1[3]                    ; OutputLogic:outInterface|Mux19 ; yes                    ;
+; OutputLogic:outInterface|bcd2[0]                    ; OutputLogic:outInterface|Mux10 ; yes                    ;
+; OutputLogic:outInterface|bcd2[1]                    ; OutputLogic:outInterface|Mux10 ; yes                    ;
+; OutputLogic:outInterface|bcd2[2]                    ; OutputLogic:outInterface|Mux10 ; yes                    ;
+; OutputLogic:outInterface|bcd2[3]                    ; OutputLogic:outInterface|Mux10 ; yes                    ;
+; OutputLogic:outInterface|bcd3[0]                    ; OutputLogic:outInterface|Mux10 ; yes                    ;
+; OutputLogic:outInterface|bcd3[1]                    ; OutputLogic:outInterface|Mux10 ; yes                    ;
+; OutputLogic:outInterface|bcd3[2]                    ; OutputLogic:outInterface|Mux10 ; yes                    ;
+; OutputLogic:outInterface|bcd3[3]                    ; OutputLogic:outInterface|Mux10 ; yes                    ;
+; OutputLogic:outInterface|bcd4[0]                    ; OutputLogic:outInterface|Mux2  ; yes                    ;
+; OutputLogic:outInterface|bcd4[1]                    ; OutputLogic:outInterface|Mux2  ; yes                    ;
+; OutputLogic:outInterface|bcd4[2]                    ; OutputLogic:outInterface|Mux2  ; yes                    ;
+; OutputLogic:outInterface|bcd4[3]                    ; OutputLogic:outInterface|Mux2  ; yes                    ;
+; OutputLogic:outInterface|bcd5[0]                    ; OutputLogic:outInterface|Mux2  ; yes                    ;
+; OutputLogic:outInterface|bcd5[1]                    ; OutputLogic:outInterface|Mux2  ; yes                    ;
+; OutputLogic:outInterface|bcd5[2]                    ; OutputLogic:outInterface|Mux2  ; yes                    ;
+; OutputLogic:outInterface|bcd5[3]                    ; OutputLogic:outInterface|Mux2  ; yes                    ;
+; Number of user-specified and inferred latches = 34  ;                                ;                        ;
++-----------------------------------------------------+--------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                             ;
++------------------------------------------------------------------+---------------------------------------------+
+; Register name                                                    ; Reason for Removal                          ;
++------------------------------------------------------------------+---------------------------------------------+
+; PC:PCount|PCOut[0]                                               ; Stuck at GND due to stuck port data_in      ;
+; Reg_File:RFILE|registers[0][0]                                   ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][1]                                   ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][2]                                   ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][3]                                   ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][4]                                   ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][5]                                   ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][6]                                   ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][7]                                   ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][8]                                   ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][9]                                   ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][10]                                  ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][11]                                  ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][12]                                  ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][13]                                  ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][14]                                  ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][15]                                  ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][16]                                  ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][17]                                  ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][18]                                  ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][19]                                  ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][20]                                  ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][21]                                  ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][22]                                  ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][23]                                  ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][24]                                  ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][25]                                  ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][26]                                  ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][27]                                  ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][28]                                  ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][29]                                  ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][30]                                  ; Stuck at GND due to stuck port clock_enable ;
+; Reg_File:RFILE|registers[0][31]                                  ; Stuck at GND due to stuck port clock_enable ;
+; rising_edge_detector:EdgDet|rising_edge_detector_fsm_curr_st.ONE ; Lost fanout                                 ;
+; Total Number of Removed Registers = 34                           ;                                             ;
++------------------------------------------------------------------+---------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                        ;
++--------------------+---------------------------+-------------------------------------------------------------------+
+; Register name      ; Reason for Removal        ; Registers Removed due to This Register                            ;
++--------------------+---------------------------+-------------------------------------------------------------------+
+; PC:PCount|PCOut[0] ; Stuck at GND              ; Reg_File:RFILE|registers[0][0], Reg_File:RFILE|registers[0][1],   ;
+;                    ; due to stuck port data_in ; Reg_File:RFILE|registers[0][2], Reg_File:RFILE|registers[0][3],   ;
+;                    ;                           ; Reg_File:RFILE|registers[0][4], Reg_File:RFILE|registers[0][5],   ;
+;                    ;                           ; Reg_File:RFILE|registers[0][6], Reg_File:RFILE|registers[0][7],   ;
+;                    ;                           ; Reg_File:RFILE|registers[0][8], Reg_File:RFILE|registers[0][9],   ;
+;                    ;                           ; Reg_File:RFILE|registers[0][10], Reg_File:RFILE|registers[0][11], ;
+;                    ;                           ; Reg_File:RFILE|registers[0][12], Reg_File:RFILE|registers[0][13], ;
+;                    ;                           ; Reg_File:RFILE|registers[0][14], Reg_File:RFILE|registers[0][15], ;
+;                    ;                           ; Reg_File:RFILE|registers[0][16], Reg_File:RFILE|registers[0][17], ;
+;                    ;                           ; Reg_File:RFILE|registers[0][18], Reg_File:RFILE|registers[0][19], ;
+;                    ;                           ; Reg_File:RFILE|registers[0][20], Reg_File:RFILE|registers[0][21], ;
+;                    ;                           ; Reg_File:RFILE|registers[0][22], Reg_File:RFILE|registers[0][23], ;
+;                    ;                           ; Reg_File:RFILE|registers[0][24], Reg_File:RFILE|registers[0][25], ;
+;                    ;                           ; Reg_File:RFILE|registers[0][26], Reg_File:RFILE|registers[0][27], ;
+;                    ;                           ; Reg_File:RFILE|registers[0][28], Reg_File:RFILE|registers[0][29], ;
+;                    ;                           ; Reg_File:RFILE|registers[0][30], Reg_File:RFILE|registers[0][31]  ;
++--------------------+---------------------------+-------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 1154  ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 30    ;
+; Number of registers using Asynchronous Clear ; 1152  ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 1120  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------+
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |DataPath|Data_Mem:RAM|MEM[15][4]                                      ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |DataPath|Data_Mem:RAM|MEM[14][6]                                      ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |DataPath|Data_Mem:RAM|MEM[13][7]                                      ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |DataPath|Data_Mem:RAM|MEM[12][5]                                      ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |DataPath|Data_Mem:RAM|MEM[11][1]                                      ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |DataPath|Data_Mem:RAM|MEM[10][7]                                      ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |DataPath|Data_Mem:RAM|MEM[9][5]                                       ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |DataPath|Data_Mem:RAM|MEM[8][1]                                       ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |DataPath|Data_Mem:RAM|MEM[7][7]                                       ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |DataPath|Data_Mem:RAM|MEM[6][5]                                       ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |DataPath|Data_Mem:RAM|MEM[5][5]                                       ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |DataPath|Data_Mem:RAM|MEM[4][7]                                       ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |DataPath|Data_Mem:RAM|MEM[3][7]                                       ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |DataPath|Data_Mem:RAM|MEM[2][5]                                       ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |DataPath|Data_Mem:RAM|MEM[1][5]                                       ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |DataPath|Data_Mem:RAM|MEM[0][5]                                       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |DataPath|Immediate_Generator:Imm|Mux31                                ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DataPath|ALU_RV32:ALU|shift2r[31]                                     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DataPath|ALU_RV32:ALU|shift2l[1]                                      ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |DataPath|ALU_RV32:ALU|shift2r[29]                                     ;
+; 4:1                ; 50 bits   ; 100 LEs       ; 100 LEs              ; 0 LEs                  ; No         ; |DataPath|ALU_RV32:ALU|shift2r[22]                                     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |DataPath|ALU_RV32:ALU|shift8l[0]                                      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |DataPath|ALU_RV32:ALU|shift8r[26]                                     ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |DataPath|ALU_RV32:ALU|shift8l[11]                                     ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |DataPath|ALU_RV32:ALU|shift8l[15]                                     ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |DataPath|OutputLogic:outInterface|selecReset[0]                       ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |DataPath|rising_edge_detector:EdgDet|rising_edge_detector_fsm_curr_st ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; No         ; |DataPath|Reg_File:RFILE|readData2[28]                                 ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 704 LEs              ; 0 LEs                  ; No         ; |DataPath|Reg_File:RFILE|readData1[11]                                 ;
+; 14:1               ; 5 bits    ; 45 LEs        ; 40 LEs               ; 5 LEs                  ; No         ; |DataPath|Mux_ToRegFile:MuxReg|Mux26                                   ;
+; 15:1               ; 8 bits    ; 80 LEs        ; 72 LEs               ; 8 LEs                  ; No         ; |DataPath|Mux_ToRegFile:MuxReg|Mux9                                    ;
+; 15:1               ; 8 bits    ; 80 LEs        ; 72 LEs               ; 8 LEs                  ; No         ; |DataPath|Mux_ToRegFile:MuxReg|Mux0                                    ;
+; 15:1               ; 2 bits    ; 20 LEs        ; 18 LEs               ; 2 LEs                  ; No         ; |DataPath|Mux_ToRegFile:MuxReg|Mux16                                   ;
+; 15:1               ; 6 bits    ; 60 LEs        ; 54 LEs               ; 6 LEs                  ; No         ; |DataPath|Mux_ToRegFile:MuxReg|Mux20                                   ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 40 LEs               ; 8 LEs                  ; No         ; |DataPath|Immediate_Generator:Imm|Mux13                                ;
+; 128:1              ; 2 bits    ; 170 LEs       ; 22 LEs               ; 148 LEs                ; No         ; |DataPath|Control:Ctrl|Mux23                                           ;
+; 11:1               ; 5 bits    ; 35 LEs        ; 25 LEs               ; 10 LEs                 ; No         ; |DataPath|Immediate_Generator:Imm|Mux26                                ;
+; 13:1               ; 12 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |DataPath|ALU_RV32:ALU|Mux8                                            ;
+; 13:1               ; 12 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |DataPath|ALU_RV32:ALU|Mux25                                           ;
+; 14:1               ; 4 bits    ; 36 LEs        ; 32 LEs               ; 4 LEs                  ; No         ; |DataPath|Immediate_Generator:Imm|Mux28                                ;
+; 16:1               ; 4 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |DataPath|ALU_RV32:ALU|Mux0                                            ;
+; 16:1               ; 3 bits    ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |DataPath|ALU_RV32:ALU|Mux30                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: multiplier2:Mult ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; size           ; 16    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Mux_ToRegFile:MuxReg ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; buswidth       ; 32    ; Signed Integer                           ;
+; selwidth       ; 3     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Mux:Mux2"                                                                                 ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; muxout[31] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "Mux_ToRegFile:MuxReg" ;
++----------------+-------+----------+--------------+
+; Port           ; Type  ; Severity ; Details      ;
++----------------+-------+----------+--------------+
+; muxin6[31..14] ; Input ; Info     ; Stuck at GND ;
++----------------+-------+----------+--------------+
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "Mux:Mux1"            ;
++---------------+-------+----------+--------------+
+; Port          ; Type  ; Severity ; Details      ;
++---------------+-------+----------+--------------+
+; muxin1[31..8] ; Input ; Info     ; Stuck at GND ;
++---------------+-------+----------+--------------+
+
+
++----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:15:col_i:0:FullAdd" ;
++------+-------+----------+--------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                ;
++------+-------+----------+--------------------------------------------------------+
+; ci   ; Input ; Info     ; Stuck at GND                                           ;
++------+-------+----------+--------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:14:col_i:0:FullAdd" ;
++------+-------+----------+--------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                ;
++------+-------+----------+--------------------------------------------------------+
+; ci   ; Input ; Info     ; Stuck at GND                                           ;
++------+-------+----------+--------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:13:col_i:0:FullAdd" ;
++------+-------+----------+--------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                ;
++------+-------+----------+--------------------------------------------------------+
+; ci   ; Input ; Info     ; Stuck at GND                                           ;
++------+-------+----------+--------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:12:col_i:0:FullAdd" ;
++------+-------+----------+--------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                ;
++------+-------+----------+--------------------------------------------------------+
+; ci   ; Input ; Info     ; Stuck at GND                                           ;
++------+-------+----------+--------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:11:col_i:0:FullAdd" ;
++------+-------+----------+--------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                ;
++------+-------+----------+--------------------------------------------------------+
+; ci   ; Input ; Info     ; Stuck at GND                                           ;
++------+-------+----------+--------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:10:col_i:0:FullAdd" ;
++------+-------+----------+--------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                ;
++------+-------+----------+--------------------------------------------------------+
+; ci   ; Input ; Info     ; Stuck at GND                                           ;
++------+-------+----------+--------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:9:col_i:0:FullAdd" ;
++------+-------+----------+-------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                               ;
++------+-------+----------+-------------------------------------------------------+
+; ci   ; Input ; Info     ; Stuck at GND                                          ;
++------+-------+----------+-------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:8:col_i:0:FullAdd" ;
++------+-------+----------+-------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                               ;
++------+-------+----------+-------------------------------------------------------+
+; ci   ; Input ; Info     ; Stuck at GND                                          ;
++------+-------+----------+-------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:7:col_i:0:FullAdd" ;
++------+-------+----------+-------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                               ;
++------+-------+----------+-------------------------------------------------------+
+; ci   ; Input ; Info     ; Stuck at GND                                          ;
++------+-------+----------+-------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:6:col_i:0:FullAdd" ;
++------+-------+----------+-------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                               ;
++------+-------+----------+-------------------------------------------------------+
+; ci   ; Input ; Info     ; Stuck at GND                                          ;
++------+-------+----------+-------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:5:col_i:0:FullAdd" ;
++------+-------+----------+-------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                               ;
++------+-------+----------+-------------------------------------------------------+
+; ci   ; Input ; Info     ; Stuck at GND                                          ;
++------+-------+----------+-------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:4:col_i:0:FullAdd" ;
++------+-------+----------+-------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                               ;
++------+-------+----------+-------------------------------------------------------+
+; ci   ; Input ; Info     ; Stuck at GND                                          ;
++------+-------+----------+-------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:3:col_i:0:FullAdd" ;
++------+-------+----------+-------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                               ;
++------+-------+----------+-------------------------------------------------------+
+; ci   ; Input ; Info     ; Stuck at GND                                          ;
++------+-------+----------+-------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:2:col_i:0:FullAdd" ;
++------+-------+----------+-------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                               ;
++------+-------+----------+-------------------------------------------------------+
+; ci   ; Input ; Info     ; Stuck at GND                                          ;
++------+-------+----------+-------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:1:col_i:0:FullAdd" ;
++------+-------+----------+-------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                               ;
++------+-------+----------+-------------------------------------------------------+
+; ci   ; Input ; Info     ; Stuck at GND                                          ;
++------+-------+----------+-------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplier2:Mult|FullAdder:\row_j:1:col_i:15:FullAdd" ;
++------+-------+----------+--------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                ;
++------+-------+----------+--------------------------------------------------------+
+; x    ; Input ; Info     ; Stuck at GND                                           ;
++------+-------+----------+--------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU_RV32:ALU"                                                                           ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; carryout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 1154                        ;
+;     CLR               ; 2                           ;
+;     CLR SLD           ; 30                          ;
+;     ENA CLR           ; 1120                        ;
+;     plain             ; 2                           ;
+; arriav_lcell_comb     ; 2567                        ;
+;     arith             ; 140                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 43                          ;
+;         2 data inputs ; 1                           ;
+;         4 data inputs ; 80                          ;
+;         5 data inputs ; 15                          ;
+;     extend            ; 35                          ;
+;         7 data inputs ; 35                          ;
+;     normal            ; 2392                        ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 265                         ;
+;         3 data inputs ; 300                         ;
+;         4 data inputs ; 208                         ;
+;         5 data inputs ; 298                         ;
+;         6 data inputs ; 1315                        ;
+; boundary_port         ; 67                          ;
+;                       ;                             ;
+; Max LUT depth         ; 30.00                       ;
+; Average LUT depth     ; 19.76                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:01:11     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Thu Jun 27 13:40:58 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off RISC_V_Micro -c RISC_V_Micro
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl/multiplier2.vhd
+    Info (12022): Found design unit 1: multiplier2-arch_multiplier File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/multiplier2.vhd Line: 15
+    Info (12023): Found entity 1: multiplier2 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/multiplier2.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl/fulladder.vhd
+    Info (12022): Found design unit 1: FullAdder-gate_level File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/FullAdder.vhd Line: 14
+    Info (12023): Found entity 1: FullAdder File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/FullAdder.vhd Line: 4
+Info (12021): Found 3 design units, including 1 entities, in source file vhdl/rising_edge_detector_tb.vhd
+    Info (12022): Found design unit 1: rising_edge_detector_tb-arch File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/rising_edge_detector_tb.vhd Line: 12
+    Info (12022): Found design unit 2: rising_edge_detector_tb_arch_cfg File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/rising_edge_detector_tb.vhd Line: 52
+    Info (12023): Found entity 1: rising_edge_detector_tb File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/rising_edge_detector_tb.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl/rising_edge_detector.vhd
+    Info (12022): Found design unit 1: rising_edge_detector-Behavioral File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/rising_edge_detector.vhd Line: 14
+    Info (12023): Found entity 1: rising_edge_detector File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/rising_edge_detector.vhd Line: 5
+Info (12021): Found 3 design units, including 1 entities, in source file vhdl/reg_file_tb.vhd
+    Info (12022): Found design unit 1: Reg_File_tb-arch_Reg_File File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Reg_File_tb.vhd Line: 34
+    Info (12022): Found design unit 2: Reg_File_tb_arch_Reg_File_cfg File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Reg_File_tb.vhd Line: 90
+    Info (12023): Found entity 1: Reg_File_tb File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Reg_File_tb.vhd Line: 28
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl/reg_file.vhd
+    Info (12022): Found design unit 1: Reg_File-arch_Reg_File File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Reg_File.vhd Line: 19
+    Info (12023): Found entity 1: Reg_File File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Reg_File.vhd Line: 5
+Info (12021): Found 3 design units, including 1 entities, in source file vhdl/pc_tb.vhd
+    Info (12022): Found design unit 1: PC_tb-arch_PC File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/PC_tb.vhd Line: 35
+    Info (12022): Found design unit 2: PC_tb_arch_PC_cfg File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/PC_tb.vhd Line: 86
+    Info (12023): Found entity 1: PC_tb File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/PC_tb.vhd Line: 29
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl/pc.vhd
+    Info (12022): Found design unit 1: PC-arch_PC File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/PC.vhd Line: 18
+    Info (12023): Found entity 1: PC File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/PC.vhd Line: 9
+Info (12021): Found 3 design units, including 1 entities, in source file vhdl/outputlogic_tb.vhd
+    Info (12022): Found design unit 1: OutputLogic_tb-OutputLogic_arch File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic_tb.vhd Line: 34
+    Info (12022): Found design unit 2: OutputLogic_tb_OutputLogic_arch_cfg File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic_tb.vhd Line: 79
+    Info (12023): Found entity 1: OutputLogic_tb File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic_tb.vhd Line: 28
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl/outputlogic.vhd
+    Info (12022): Found design unit 1: OutputLogic-OutputLogic_arch File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 21
+    Info (12023): Found entity 1: OutputLogic File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 6
+Info (12021): Found 3 design units, including 1 entities, in source file vhdl/mux_toregfile_tb.vhd
+    Info (12022): Found design unit 1: Mux_ToRegFile_tb-Mux_ToRegFile File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Mux_ToRegFile_tb.vhd Line: 35
+    Info (12022): Found design unit 2: Mux_ToRegFile_tb_Mux_ToRegFile_cfg File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Mux_ToRegFile_tb.vhd Line: 98
+    Info (12023): Found entity 1: Mux_ToRegFile_tb File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Mux_ToRegFile_tb.vhd Line: 29
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl/mux_toregfile.vhd
+    Info (12022): Found design unit 1: Mux_ToRegFile-arch_Mux_ToRegFile File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Mux_ToRegFile.vhd Line: 22
+    Info (12023): Found entity 1: Mux_ToRegFile File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Mux_ToRegFile.vhd Line: 4
+Info (12021): Found 3 design units, including 1 entities, in source file vhdl/mux_tb.vhd
+    Info (12022): Found design unit 1: Mux_tb-arch_mux File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Mux_tb.vhd Line: 34
+    Info (12022): Found design unit 2: Mux_tb_arch_mux_cfg File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Mux_tb.vhd Line: 70
+    Info (12023): Found entity 1: Mux_tb File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Mux_tb.vhd Line: 28
+Info (12021): Found 3 design units, including 1 entities, in source file vhdl/mux_store_tb.vhd
+    Info (12022): Found design unit 1: Mux_Store_tb-muxStore File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Mux_Store_tb.vhd Line: 33
+    Info (12022): Found design unit 2: Mux_Store_tb_muxStore_cfg File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Mux_Store_tb.vhd Line: 72
+    Info (12023): Found entity 1: Mux_Store_tb File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Mux_Store_tb.vhd Line: 27
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl/mux_store.vhd
+    Info (12022): Found design unit 1: Mux_Store-arch_Mux_Store File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Mux_Store.vhd Line: 13
+    Info (12023): Found entity 1: Mux_Store File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Mux_Store.vhd Line: 4
+Warning (12090): Entity "Mux" obtained from "VHDL/Mux.vhd" instead of from Quartus Prime megafunction library File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Mux.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl/mux.vhd
+    Info (12022): Found design unit 1: Mux-arch_Mux File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Mux.vhd Line: 13
+    Info (12023): Found entity 1: Mux File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Mux.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl/multiplier1.vhd
+    Info (12022): Found design unit 1: multiplier1-arch_multiplier File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/multiplier1.vhd Line: 15
+    Info (12023): Found entity 1: multiplier1 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/multiplier1.vhd Line: 6
+Info (12021): Found 3 design units, including 1 entities, in source file vhdl/instruction_mem_tb.vhd
+    Info (12022): Found design unit 1: Instruction_Mem_tb-arch_Instruction_Mem File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Instruction_Mem_tb.vhd Line: 35
+    Info (12022): Found design unit 2: Instruction_Mem_tb_arch_Instruction_Mem_cfg File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Instruction_Mem_tb.vhd Line: 63
+    Info (12023): Found entity 1: Instruction_Mem_tb File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Instruction_Mem_tb.vhd Line: 29
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl/instruction_mem.vhd
+    Info (12022): Found design unit 1: Instruction_Mem-arch_Instruction_Mem File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Instruction_Mem.vhd Line: 13
+    Info (12023): Found entity 1: Instruction_Mem File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Instruction_Mem.vhd Line: 6
+Info (12021): Found 3 design units, including 1 entities, in source file vhdl/immediate_generator_tb.vhd
+    Info (12022): Found design unit 1: Immediate_Generator_tb-arch_Immeadiate_Generator File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Immediate_Generator_tb.vhd Line: 35
+    Info (12022): Found design unit 2: Immediate_Generator_tb_arch_Immeadiate_Generator_cfg File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Immediate_Generator_tb.vhd Line: 72
+    Info (12023): Found entity 1: Immediate_Generator_tb File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Immediate_Generator_tb.vhd Line: 29
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl/immediate_generator.vhd
+    Info (12022): Found design unit 1: Immediate_Generator-arch_Inmmediate_Generator File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Immediate_Generator.vhd Line: 13
+    Info (12023): Found entity 1: Immediate_Generator File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Immediate_Generator.vhd Line: 6
+Info (12021): Found 3 design units, including 1 entities, in source file vhdl/datapath_tb.vhd
+    Info (12022): Found design unit 1: DataPath_tb-arch_Datapath File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath_tb.vhd Line: 33
+    Info (12022): Found design unit 2: DataPath_tb_arch_Datapath_cfg File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath_tb.vhd Line: 91
+    Info (12023): Found entity 1: DataPath_tb File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath_tb.vhd Line: 27
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl/datapath.vhd
+    Info (12022): Found design unit 1: DataPath-arch_DataPath File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd Line: 21
+    Info (12023): Found entity 1: DataPath File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd Line: 6
+Info (12021): Found 3 design units, including 1 entities, in source file vhdl/data_mem_tb.vhd
+    Info (12022): Found design unit 1: Data_Mem_tb-arch_Data_Mem File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Data_Mem_tb.vhd Line: 34
+    Info (12022): Found design unit 2: Data_Mem_tb_arch_Data_Mem_cfg File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Data_Mem_tb.vhd Line: 86
+    Info (12023): Found entity 1: Data_Mem_tb File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Data_Mem_tb.vhd Line: 28
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl/data_mem.vhd
+    Info (12022): Found design unit 1: Data_Mem-arch_Data_Mem File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Data_Mem.vhd Line: 22
+    Info (12023): Found entity 1: Data_Mem File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Data_Mem.vhd Line: 11
+Info (12021): Found 3 design units, including 1 entities, in source file vhdl/control_tb.vhd
+    Info (12022): Found design unit 1: Control_tb-arch_Control File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control_tb.vhd Line: 35
+    Info (12022): Found design unit 2: Control_tb_arch_Control_cfg File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control_tb.vhd Line: 137
+    Info (12023): Found entity 1: Control_tb File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control_tb.vhd Line: 29
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl/control.vhd
+    Info (12022): Found design unit 1: Control-arch_Control File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 23
+    Info (12023): Found entity 1: Control File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 5
+Info (12021): Found 3 design units, including 1 entities, in source file vhdl/branch_control_tb.vhd
+    Info (12022): Found design unit 1: Branch_Control_tb-arch_Branch_Control File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Branch_Control_tb.vhd Line: 35
+    Info (12022): Found design unit 2: Branch_Control_tb_arch_Branch_Control_cfg File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Branch_Control_tb.vhd Line: 96
+    Info (12023): Found entity 1: Branch_Control_tb File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Branch_Control_tb.vhd Line: 29
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl/branch_control.vhd
+    Info (12022): Found design unit 1: Branch_Control-arch_Branch_Control File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Branch_Control.vhd Line: 15
+    Info (12023): Found entity 1: Branch_Control File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Branch_Control.vhd Line: 6
+Info (12021): Found 3 design units, including 1 entities, in source file vhdl/bcdto7seg_tb.vhd
+    Info (12022): Found design unit 1: bcdTo7Seg_tb-bcd_tb File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/bcdTo7Seg_tb.vhd Line: 35
+    Info (12022): Found design unit 2: bcdTo7Seg_tb_bcd_tb_cfg File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/bcdTo7Seg_tb.vhd Line: 61
+    Info (12023): Found entity 1: bcdTo7Seg_tb File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/bcdTo7Seg_tb.vhd Line: 29
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl/bcdto7seg.vhd
+    Info (12022): Found design unit 1: bcdTo7Seg-Behavioral File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/bcdTo7Seg.vhd Line: 13
+    Info (12023): Found entity 1: bcdTo7Seg File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/bcdTo7Seg.vhd Line: 7
+Info (12021): Found 3 design units, including 1 entities, in source file vhdl/alu_rv32_tb.vhd
+    Info (12022): Found design unit 1: ALU_RV32_tb-arch_ALU_RV32 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/ALU_RV32_tb.vhd Line: 35
+    Info (12022): Found design unit 2: ALU_RV32_tb_arch_ALU_RV32_cfg File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/ALU_RV32_tb.vhd Line: 100
+    Info (12023): Found entity 1: ALU_RV32_tb File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/ALU_RV32_tb.vhd Line: 29
+Info (12021): Found 2 design units, including 1 entities, in source file vhdl/alu_rv32.vhd
+    Info (12022): Found design unit 1: ALU_RV32-arch_ALU_RV32 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/ALU_RV32.vhd Line: 18
+    Info (12023): Found entity 1: ALU_RV32 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/ALU_RV32.vhd Line: 6
+Info (12127): Elaborating entity "DataPath" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at DataPath.vhd(184): object "carry" assigned a value but never read File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd Line: 184
+Info (12128): Elaborating entity "rising_edge_detector" for hierarchy "rising_edge_detector:EdgDet" File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd Line: 211
+Info (12128): Elaborating entity "PC" for hierarchy "PC:PCount" File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd Line: 213
+Info (12128): Elaborating entity "Instruction_Mem" for hierarchy "Instruction_Mem:ROM" File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd Line: 215
+Info (12128): Elaborating entity "Reg_File" for hierarchy "Reg_File:RFILE" File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd Line: 217
+Info (12128): Elaborating entity "Mux" for hierarchy "Mux:Mux0" File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd Line: 221
+Info (12128): Elaborating entity "ALU_RV32" for hierarchy "ALU_RV32:ALU" File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd Line: 223
+Info (12128): Elaborating entity "multiplier2" for hierarchy "multiplier2:Mult" File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd Line: 226
+Info (12128): Elaborating entity "FullAdder" for hierarchy "multiplier2:Mult|FullAdder:\row_j:1:col_i:15:FullAdd" File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/multiplier2.vhd Line: 41
+Info (12128): Elaborating entity "Data_Mem" for hierarchy "Data_Mem:RAM" File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd Line: 230
+Info (12128): Elaborating entity "Branch_Control" for hierarchy "Branch_Control:BRControl" File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd Line: 233
+Info (12128): Elaborating entity "Mux_ToRegFile" for hierarchy "Mux_ToRegFile:MuxReg" File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd Line: 235
+Info (12128): Elaborating entity "Control" for hierarchy "Control:Ctrl" File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd Line: 238
+Info (12128): Elaborating entity "Immediate_Generator" for hierarchy "Immediate_Generator:Imm" File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd Line: 246
+Info (12128): Elaborating entity "OutputLogic" for hierarchy "OutputLogic:outInterface" File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd Line: 248
+Warning (10492): VHDL Process Statement warning at OutputLogic.vhd(51): signal "Reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 51
+Warning (10492): VHDL Process Statement warning at OutputLogic.vhd(53): signal "Reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 53
+Warning (10492): VHDL Process Statement warning at OutputLogic.vhd(54): signal "Reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 54
+Warning (10492): VHDL Process Statement warning at OutputLogic.vhd(56): signal "Reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 56
+Warning (10492): VHDL Process Statement warning at OutputLogic.vhd(57): signal "Reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 57
+Warning (10492): VHDL Process Statement warning at OutputLogic.vhd(59): signal "Reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 59
+Warning (10492): VHDL Process Statement warning at OutputLogic.vhd(60): signal "Reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 60
+Warning (10631): VHDL Process Statement warning at OutputLogic.vhd(44): inferring latch(es) for signal or variable "LEDS", which holds its previous value in one or more paths through the process File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Warning (10631): VHDL Process Statement warning at OutputLogic.vhd(44): inferring latch(es) for signal or variable "bcd0", which holds its previous value in one or more paths through the process File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Warning (10631): VHDL Process Statement warning at OutputLogic.vhd(44): inferring latch(es) for signal or variable "bcd1", which holds its previous value in one or more paths through the process File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Warning (10631): VHDL Process Statement warning at OutputLogic.vhd(44): inferring latch(es) for signal or variable "bcd2", which holds its previous value in one or more paths through the process File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Warning (10631): VHDL Process Statement warning at OutputLogic.vhd(44): inferring latch(es) for signal or variable "bcd3", which holds its previous value in one or more paths through the process File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Warning (10631): VHDL Process Statement warning at OutputLogic.vhd(44): inferring latch(es) for signal or variable "bcd4", which holds its previous value in one or more paths through the process File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Warning (10631): VHDL Process Statement warning at OutputLogic.vhd(44): inferring latch(es) for signal or variable "bcd5", which holds its previous value in one or more paths through the process File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "bcd5[0]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "bcd5[1]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "bcd5[2]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "bcd5[3]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "bcd4[0]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "bcd4[1]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "bcd4[2]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "bcd4[3]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "bcd3[0]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "bcd3[1]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "bcd3[2]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "bcd3[3]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "bcd2[0]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "bcd2[1]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "bcd2[2]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "bcd2[3]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "bcd1[0]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "bcd1[1]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "bcd1[2]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "bcd1[3]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "bcd0[0]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "bcd0[1]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "bcd0[2]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "bcd0[3]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "LEDS[0]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "LEDS[1]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "LEDS[2]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "LEDS[3]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "LEDS[4]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "LEDS[5]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "LEDS[6]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "LEDS[7]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "LEDS[8]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (10041): Inferred latch for "LEDS[9]" at OutputLogic.vhd(44) File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+Info (12128): Elaborating entity "bcdTo7Seg" for hierarchy "OutputLogic:outInterface|bcdTo7Seg:dec0" File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 36
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer globalClk File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd Line: 199
+Warning (13012): Latch OutputLogic:outInterface|LEDS[0] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Warning (13012): Latch OutputLogic:outInterface|LEDS[1] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Warning (13012): Latch OutputLogic:outInterface|LEDS[2] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Warning (13012): Latch OutputLogic:outInterface|LEDS[3] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Warning (13012): Latch OutputLogic:outInterface|LEDS[4] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Warning (13012): Latch OutputLogic:outInterface|LEDS[5] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Warning (13012): Latch OutputLogic:outInterface|LEDS[6] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Warning (13012): Latch OutputLogic:outInterface|LEDS[7] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Warning (13012): Latch OutputLogic:outInterface|LEDS[8] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Warning (13012): Latch OutputLogic:outInterface|LEDS[9] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Warning (13012): Latch OutputLogic:outInterface|bcd0[0] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal KEY[0] File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd Line: 9
+Warning (13012): Latch OutputLogic:outInterface|bcd0[1] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal KEY[0] File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd Line: 9
+Warning (13012): Latch OutputLogic:outInterface|bcd0[2] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal KEY[0] File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd Line: 9
+Warning (13012): Latch OutputLogic:outInterface|bcd0[3] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal KEY[0] File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd Line: 9
+Warning (13012): Latch OutputLogic:outInterface|bcd1[0] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal KEY[0] File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd Line: 9
+Warning (13012): Latch OutputLogic:outInterface|bcd1[1] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal KEY[0] File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd Line: 9
+Warning (13012): Latch OutputLogic:outInterface|bcd1[2] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal KEY[0] File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd Line: 9
+Warning (13012): Latch OutputLogic:outInterface|bcd1[3] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal KEY[0] File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/DataPath.vhd Line: 9
+Warning (13012): Latch OutputLogic:outInterface|bcd2[0] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Warning (13012): Latch OutputLogic:outInterface|bcd2[1] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Warning (13012): Latch OutputLogic:outInterface|bcd2[2] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Warning (13012): Latch OutputLogic:outInterface|bcd2[3] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Warning (13012): Latch OutputLogic:outInterface|bcd3[0] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Warning (13012): Latch OutputLogic:outInterface|bcd3[1] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Warning (13012): Latch OutputLogic:outInterface|bcd3[2] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Warning (13012): Latch OutputLogic:outInterface|bcd3[3] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Warning (13012): Latch OutputLogic:outInterface|bcd4[0] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Warning (13012): Latch OutputLogic:outInterface|bcd4[1] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Warning (13012): Latch OutputLogic:outInterface|bcd4[2] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Warning (13012): Latch OutputLogic:outInterface|bcd4[3] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Warning (13012): Latch OutputLogic:outInterface|bcd5[0] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Warning (13012): Latch OutputLogic:outInterface|bcd5[1] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Warning (13012): Latch OutputLogic:outInterface|bcd5[2] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Warning (13012): Latch OutputLogic:outInterface|bcd5[3] has unsafe behavior File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/OutputLogic.vhd Line: 44
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Control:Ctrl|WideNor0 File: D:/Development/VHDL/RISC_V_Micro_V3/VHDL/Control.vhd Line: 313
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Warning (20013): Ignored 24 assignments for entity "ghrd_top" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity ghrd_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity ghrd_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity ghrd_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_PRESERVE_HIGH_SPEED_TILES ON -entity ghrd_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IGNORE_SOURCE_FILE_CHANGES OFF -entity ghrd_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ALWAYS_USE_QXP_NETLIST OFF -entity ghrd_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_COLOR 16764057 -entity ghrd_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -entity ghrd_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -entity ghrd_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS UPDATE_CONFLICTING -entity ghrd_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity ghrd_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity ghrd_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity ghrd_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ALLOW_MULTIPLE_PERSONAS OFF -entity ghrd_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ASD_REGION_ID 1 -entity ghrd_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name CROSS_BOUNDARY_OPTIMIZATIONS OFF -entity ghrd_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_CONSTANTS_ON_INPUTS ON -entity ghrd_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_INVERSIONS_ON_INPUTS ON -entity ghrd_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS ON -entity ghrd_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_INPUTS ON -entity ghrd_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_BIDIRS ON -entity ghrd_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity ghrd_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity ghrd_top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity ghrd_top -section_id Top was ignored
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 3621 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 52 output pins
+    Info (21061): Implemented 3554 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 112 warnings
+    Info: Peak virtual memory: 5102 megabytes
+    Info: Processing ended: Thu Jun 27 13:42:29 2019
+    Info: Elapsed time: 00:01:31
+    Info: Total CPU time (on all processors): 00:01:40
+
+
